@@ -74,7 +74,7 @@ final_sales = sales.join(
     aggregated_sales,
     on=["product_id", "sale_month"],
     how="left"
-).select("sale_id", "product_id", "store_id", "sale_date", "sale_month", "sale_year", "total_sales_quantity", 
+).select("sale_id", "product_id", "store_id", "sale_date", "sale_month", "sale_year",  "quantity", "total_amount", "total_sales_quantity", 
          "total_sales_amount")
 
 # Join final_sales with products DataFrame on product_id
@@ -86,7 +86,7 @@ final_df = sales_products_joined.join(stores, on="store_id", how="left")
 # Select desired columns and clean final DataFrame
 final_df = final_df.select(
     "product_id", "product_name", "product_category", 
-    "store_id", "store_name", "location", "sale_id", "sale_date", "sale_month", "sale_year", 
+    "store_id", "store_name", "location", "sale_id", "quantity", "total_amount", "sale_date", "sale_month", "sale_year", 
     "total_sales_quantity", "total_sales_amount"
 )
 
