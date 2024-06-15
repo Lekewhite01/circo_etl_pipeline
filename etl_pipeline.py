@@ -94,7 +94,7 @@ final_df_pandas = final_df.toPandas()
 print("===== Writing DataFrame to SQLite DB =====")
 sqlite_db_path = "sql_database.db"
 conn = sqlite3.connect(sqlite_db_path)
-final_df_pandas.to_sql("sales_product_tbl", conn, if_exists="replace", index=True)
+final_df_pandas.to_sql("sales_product_tbl", conn, if_exists="replace", index=False)
 conn.close()
 print("===== Writing to SQLite done! =====")
 
