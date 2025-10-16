@@ -1,4 +1,4 @@
-# Data Pipeline Assignment
+# ETL Pipeline
 
 ## Setup Instructions
 
